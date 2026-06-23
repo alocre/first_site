@@ -1,15 +1,17 @@
 /* === GLOBAL STYLES === */
 :root {
-    --primary: #ff3366;
-    --secondary: #6633ff;
-    --accent: #33ffcc;
-    --dark: #1a1a2e;
-    --light: #f0f0f5;
-    --budget: #ff9a3c;
-    --mixers: #6a67ce;
-    --premium: #00b4d8;
-    --botanicals: #4caf50;
-    --recipes: #ff6b6b;
+    --primary: #c5a376;
+    --secondary: #7d6b5e;
+    --accent: #d4af8f;
+    --dark: #1a1410;
+    --light: #f5f1ed;
+    --budget: #a0826d;
+    --mixers: #8b7b70;
+    --premium: #c9a66f;
+    --botanicals: #9b8b7e;
+    --recipes: #b8956a;
+    --reviews: #a8876b;
+    --success: #7ba878;
 }
 
 * {
@@ -20,7 +22,7 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    background: linear-gradient(135deg, var(--dark), #16213e);
+    background: linear-gradient(135deg, var(--dark), #2a2419);
     color: var(--light);
     min-height: 100vh;
     overflow-x: hidden;
@@ -53,49 +55,50 @@ h1, h2, h3, h4, h5, h6 {
 .bg-circle {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.1;
-    filter: blur(60px);
-    animation: floatBg 25s infinite linear;
+    opacity: 0.08;
+    filter: blur(80px);
+    animation: floatBg 35s infinite ease-in-out;
 }
 
 .circle-1 {
     width: 400px;
     height: 400px;
-    background: var(--primary);
+    background: var(--accent);
     top: 10%;
     left: 5%;
-    animation-duration: 40s;
+    animation-duration: 45s;
 }
 
 .circle-2 {
     width: 600px;
     height: 600px;
-    background: var(--secondary);
+    background: var(--primary);
     bottom: 10%;
     right: 5%;
-    animation-duration: 50s;
+    animation-duration: 55s;
     animation-direction: reverse;
 }
 
 .circle-3 {
     width: 300px;
     height: 300px;
-    background: var(--accent);
+    background: var(--secondary);
     top: 40%;
     right: 20%;
-    animation-duration: 30s;
+    animation-duration: 40s;
 }
 
 /* === HEADER & NAVIGATION === */
 header {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
+    background: rgba(20, 12, 8, 0.85);
+    backdrop-filter: blur(15px);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    animation: headerPulse 4s infinite alternate;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+    animation: headerPulse 6s infinite ease-in-out;
+    border-bottom: 1px solid rgba(212, 175, 143, 0.15);
 }
 
 nav {
@@ -112,7 +115,7 @@ nav {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: logoPulse 2s infinite alternate;
+    animation: logoPulse 4s infinite ease-in-out;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -149,9 +152,10 @@ nav {
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-decoration: none;
     color: var(--light);
+    letter-spacing: 1px;
 }
 
 .nav-link:hover {
@@ -164,8 +168,8 @@ nav {
     bottom: 0;
     left: 0;
     width: 0;
-    height: 3px;
-    background: var(--accent);
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), var(--primary));
     transition: width 0.3s ease;
 }
 
@@ -190,28 +194,31 @@ nav {
 .hero h1 {
     font-size: 5rem;
     margin-bottom: 20px;
-    background: linear-gradient(to right, var(--primary), var(--secondary));
+    background: linear-gradient(to right, var(--accent), var(--primary));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
+    text-shadow: 0 0 30px rgba(197, 163, 118, 0.3);
     animation: titleFloat 6s infinite ease-in-out;
+    font-weight: 900;
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     max-width: 700px;
     margin-bottom: 40px;
     color: var(--light);
     animation: fadeInUp 1.5s ease-out;
+    line-height: 1.8;
+    font-weight: 300;
 }
 
 .cta-button {
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.2rem;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: var(--dark);
+    border: 2px solid var(--accent);
+    padding: 15px 45px;
+    font-size: 1rem;
     font-weight: 700;
     border-radius: 50px;
     cursor: pointer;
@@ -220,13 +227,13 @@ nav {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    animation: pulse 2s infinite;
+    box-shadow: 0 8px 20px rgba(212, 175, 143, 0.2);
+    animation: pulse 3s infinite ease-in-out;
 }
 
 .cta-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 30px rgba(212, 175, 143, 0.4);
     animation: none;
 }
 
@@ -254,49 +261,53 @@ nav {
 .section-title {
     text-align: center;
     margin-bottom: 60px;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     position: relative;
+    color: var(--accent);
+    font-weight: 900;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 5px;
-    background: var(--accent);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent), var(--primary));
     border-radius: 5px;
-    animation: linePulse 2s infinite alternate;
+    animation: linePulse 3s infinite ease-in-out;
 }
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
+    margin-top: 40px;
 }
 
 .category-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, rgba(160, 130, 109, 0.1), rgba(125, 107, 94, 0.1));
     border-radius: 20px;
-    padding: 30px;
+    padding: 40px 30px;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid rgba(212, 175, 143, 0.2);
     cursor: pointer;
     animation: cardFloat 8s infinite ease-in-out;
     perspective: 1000px;
 }
 
 .category-card:hover {
-    transform: translateY(-10px) rotateX(5deg);
+    transform: translateY(-15px) rotateX(5deg);
     border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(212, 175, 143, 0.15);
     animation: none;
+    background: linear-gradient(135deg, rgba(212, 175, 143, 0.15), rgba(197, 163, 118, 0.1));
 }
 
 .category-card::before {
@@ -306,7 +317,7 @@ nav {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle, rgba(212, 175, 143, 0.1) 0%, rgba(212, 175, 143, 0) 70%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -316,52 +327,37 @@ nav {
 }
 
 .category-icon {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    animation: iconSpin 8s infinite linear;
+    background: linear-gradient(135deg, rgba(197, 163, 118, 0.2), rgba(160, 130, 109, 0.2));
+    animation: iconFloat 4s infinite ease-in-out;
     transition: all 0.3s ease;
+    border: 2px solid rgba(212, 175, 143, 0.3);
 }
 
 .category-card:hover .category-icon {
-    transform: scale(1.2);
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-}
-
-.budget .category-icon {
-    background: rgba(255, 154, 60, 0.2);
-    color: var(--budget);
-}
-
-.mixers .category-icon {
-    background: rgba(106, 103, 206, 0.2);
-    color: var(--mixers);
-}
-
-.premium .category-icon {
-    background: rgba(0, 180, 216, 0.2);
-    color: var(--premium);
-}
-
-.botanicals .category-icon {
-    background: rgba(76, 175, 80, 0.2);
-    color: var(--botanicals);
-}
-
-.recipes .category-icon {
-    background: rgba(255, 107, 107, 0.2);
-    color: var(--recipes);
+    transform: scale(1.15);
+    box-shadow: 0 0 30px rgba(212, 175, 143, 0.3);
 }
 
 .category-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    color: var(--accent);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.category-card p {
+    color: var(--light);
+    opacity: 0.8;
+    line-height: 1.6;
 }
 
 /* === CONTENT PAGES === */
@@ -383,39 +379,42 @@ nav {
 }
 
 .page-title {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
+    color: var(--accent);
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 .page-title::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 100px;
     height: 4px;
-    background: var(--accent);
+    background: linear-gradient(to right, var(--accent), var(--primary));
     border-radius: 5px;
-    animation: linePulse 2s infinite alternate;
+    animation: linePulse 3s infinite ease-in-out;
 }
 
 .gin-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .gin-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 25px;
+    background: linear-gradient(135deg, rgba(160, 130, 109, 0.08), rgba(125, 107, 94, 0.08));
+    border-radius: 18px;
+    padding: 30px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid rgba(212, 175, 143, 0.2);
     animation: cardFloat 10s infinite ease-in-out;
     position: relative;
     overflow: hidden;
@@ -423,9 +422,10 @@ nav {
 
 .gin-item:hover {
     border-color: var(--accent);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(212, 175, 143, 0.15);
     animation: none;
+    background: linear-gradient(135deg, rgba(212, 175, 143, 0.12), rgba(197, 163, 118, 0.08));
 }
 
 .gin-item::before {
@@ -434,8 +434,8 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 5px;
-    background: var(--accent);
+    height: 4px;
+    background: linear-gradient(to right, var(--accent), transparent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s ease;
@@ -448,78 +448,91 @@ nav {
 .favorite-btn {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
     float: right;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: opacity(0.6);
 }
 
 .favorite-btn:hover {
     transform: scale(1.2);
+    filter: opacity(1);
 }
 
 .gin-name {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
     color: var(--accent);
     clear: both;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 .gin-origin {
     font-size: 0.9rem;
-    color: var(--accent);
+    color: var(--secondary);
     margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
 }
 
 .gin-price {
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 800;
+    font-size: 1.3rem;
     color: var(--primary);
-    margin: 10px 0;
-    animation: priceGlow 2s infinite alternate;
+    margin: 12px 0;
     display: inline-block;
-    padding: 5px 15px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    border-radius: 25px;
+    background: rgba(212, 175, 143, 0.1);
+    border: 1px solid rgba(212, 175, 143, 0.2);
 }
 
 .gin-description {
     margin-bottom: 15px;
-    line-height: 1.6;
+    line-height: 1.8;
+    color: var(--light);
+    opacity: 0.85;
 }
 
 .gin-tips {
     padding-left: 20px;
     margin-top: 15px;
+    list-style: none;
 }
 
 .gin-tips li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     position: relative;
+    opacity: 0.8;
+    line-height: 1.6;
 }
 
 .gin-tips li::before {
-    content: '➡️';
+    content: '◆';
     position: absolute;
     left: -20px;
-    animation: tipBullet 1s infinite alternate;
+    color: var(--accent);
+    opacity: 0.6;
 }
 
 /* === RECIPES PAGE === */
 .recipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .recipe-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 25px;
+    background: linear-gradient(135deg, rgba(160, 130, 109, 0.08), rgba(125, 107, 94, 0.08));
+    border-radius: 18px;
+    padding: 30px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid rgba(184, 149, 106, 0.2);
     animation: cardFloat 12s infinite ease-in-out;
     position: relative;
     overflow: hidden;
@@ -527,8 +540,8 @@ nav {
 
 .recipe-card:hover {
     border-color: var(--recipes);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(184, 149, 106, 0.15);
     animation: none;
 }
 
@@ -539,7 +552,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle at var(--x) var(--y), rgba(212, 175, 143, 0.1) 0%, rgba(212, 175, 143, 0) 70%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -552,51 +565,73 @@ nav {
 .recipe-title {
     font-size: 1.8rem;
     color: var(--recipes);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 .recipe-icon {
-    font-size: 1.5rem;
-    animation: iconSpin 5s infinite linear;
+    font-size: 1.8rem;
+    animation: iconFloat 4s infinite ease-in-out;
 }
 
 .recipe-ingredients {
     margin: 15px 0;
     padding-left: 20px;
+    list-style: none;
 }
 
 .recipe-ingredients li {
     margin-bottom: 8px;
     position: relative;
-    list-style: none;
+    opacity: 0.85;
+    line-height: 1.6;
 }
 
 .recipe-ingredients li::before {
-    content: '🍸';
+    content: '•';
     position: absolute;
-    left: -20px;
-    animation: ingredientBullet 1.5s infinite alternate;
+    left: -15px;
+    color: var(--recipes);
+    font-size: 1.2rem;
 }
 
 .recipe-steps {
     padding-left: 20px;
     margin-top: 15px;
+    list-style: none;
 }
 
 .recipe-steps li {
     margin-bottom: 10px;
     position: relative;
-    list-style: none;
+    opacity: 0.85;
+    line-height: 1.7;
 }
 
 .recipe-steps li::before {
-    content: '🔹';
+    content: counter(step-counter);
+    counter-increment: step-counter;
     position: absolute;
-    left: -20px;
-    animation: stepBullet 1s infinite alternate;
+    left: -25px;
+    width: 20px;
+    height: 20px;
+    background: rgba(212, 175, 143, 0.2);
+    border: 1px solid var(--recipes);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--recipes);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.recipe-card {
+    counter-reset: step-counter;
 }
 
 /* === TONICS SECTION === */
@@ -604,21 +639,23 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    margin-top: 50px;
 }
 
 .tonic-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 25px;
+    background: linear-gradient(135deg, rgba(160, 130, 109, 0.08), rgba(125, 107, 94, 0.08));
+    border-radius: 18px;
+    padding: 30px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid rgba(212, 175, 143, 0.2);
     animation: cardFloat 9s infinite ease-in-out;
 }
 
 .tonic-item:hover {
     border-color: var(--mixers);
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(212, 175, 143, 0.15);
     animation: none;
 }
 
@@ -626,57 +663,244 @@ nav {
     font-size: 1.5rem;
     color: var(--accent);
     margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 /* === BOTANICALS SECTION === */
 .botanicals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    margin-top: 50px;
 }
 
 .botanical-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 25px;
+    background: linear-gradient(135deg, rgba(160, 130, 109, 0.08), rgba(125, 107, 94, 0.08));
+    border-radius: 18px;
+    padding: 35px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid rgba(212, 175, 143, 0.2);
     text-align: center;
     animation: cardFloat 11s infinite ease-in-out;
 }
 
 .botanical-item:hover {
     border-color: var(--botanicals);
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(212, 175, 143, 0.15);
     animation: none;
 }
 
 .botanical-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 15px;
     color: var(--botanicals);
-    animation: iconSpin 10s infinite linear;
+    animation: iconFloat 4s infinite ease-in-out;
     display: inline-block;
 }
 
 .botanical-name {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* === REVIEWS/SUBMISSIONS SECTION === */
+.reviews-section {
+    background: linear-gradient(135deg, rgba(160, 130, 109, 0.08), rgba(125, 107, 94, 0.08));
+    border-radius: 20px;
+    padding: 50px 40px;
+    border: 2px solid rgba(212, 175, 143, 0.2);
+    margin-bottom: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.submission-form {
+    background: rgba(20, 12, 8, 0.4);
+    border-radius: 15px;
+    padding: 35px;
+    border: 2px solid rgba(212, 175, 143, 0.15);
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
     margin-bottom: 10px;
     color: var(--accent);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(245, 241, 237, 0.05);
+    border: 2px solid rgba(212, 175, 143, 0.2);
+    border-radius: 10px;
+    color: var(--light);
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(245, 241, 237, 0.08);
+    box-shadow: 0 0 15px rgba(212, 175, 143, 0.15);
+}
+
+.form-group textarea {
+    min-height: 130px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.rating-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.star-rating {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.4;
+    margin: 0;
+    color: var(--recipes);
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: var(--dark);
+    border: 2px solid var(--accent);
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(212, 175, 143, 0.2);
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(212, 175, 143, 0.4);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.review-card {
+    background: linear-gradient(135deg, rgba(160, 130, 109, 0.1), rgba(125, 107, 94, 0.1));
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid rgba(212, 175, 143, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    animation: cardFloat 8s infinite ease-in-out;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(212, 175, 143, 0.1);
+    animation: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.review-gin-name {
+    font-size: 1.3rem;
+    color: var(--accent);
+    font-weight: 800;
+    flex: 1;
+}
+
+.review-rating {
+    color: var(--recipes);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.review-author {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.review-date {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 12px;
+}
+
+.review-text {
+    line-height: 1.7;
+    color: var(--light);
+    opacity: 0.85;
+    font-size: 0.95rem;
 }
 
 /* === FOOTER === */
 footer {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 30px 0;
+    background: rgba(20, 12, 8, 0.9);
+    padding: 40px 0;
     text-align: center;
     backdrop-filter: blur(10px);
-    border-top: 2px solid var(--accent);
+    border-top: 2px solid rgba(212, 175, 143, 0.2);
     position: relative;
     overflow: hidden;
     animation: footerFloat 8s infinite ease-in-out;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .footer-content {
@@ -686,54 +910,33 @@ footer {
 }
 
 .copyright {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--light);
     font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .copyright span {
     color: var(--accent);
-    font-weight: 700;
-}
-
-.footer-botanical {
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0.2;
-    z-index: -1;
-    animation: float 15s infinite ease-in-out;
-}
-
-.footer-botanical:nth-child(1) {
-    top: -20px;
-    left: 10%;
-    color: var(--botanicals);
-    animation-delay: 0s;
-}
-
-.footer-botanical:nth-child(2) {
-    bottom: -20px;
-    right: 15%;
-    color: var(--accent);
-    animation-delay: 3s;
+    font-weight: 800;
 }
 
 /* === ANIMATIONS === */
 @keyframes logoPulse {
     0% {
-        text-shadow: 0 0 10px var(--primary);
+        text-shadow: 0 0 10px rgba(197, 163, 118, 0.3);
     }
     100% {
-        text-shadow: 0 0 30px var(--secondary), 0 0 20px var(--accent);
+        text-shadow: 0 0 30px rgba(212, 175, 143, 0.5), 0 0 20px rgba(197, 163, 118, 0.3);
     }
 }
 
 @keyframes headerPulse {
     0% {
-        box-shadow: 0 5px 20px rgba(255, 51, 102, 0.3);
+        box-shadow: 0 5px 25px rgba(212, 175, 143, 0.1);
     }
     100% {
-        box-shadow: 0 5px 30px rgba(102, 51, 255, 0.5);
+        box-shadow: 0 5px 35px rgba(212, 175, 143, 0.2);
     }
 }
 
@@ -751,7 +954,7 @@ footer {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -760,78 +963,71 @@ footer {
 }
 
 @keyframes float {
-    0% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(10deg);
-    }
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-}
-
-@keyframes floatBg {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        transform: translate(20px, 20px) rotate(90deg);
-    }
-    50% {
-        transform: translate(0, 40px) rotate(180deg);
-    }
-    75% {
-        transform: translate(-20px, 20px) rotate(270deg);
-    }
-    100% {
-        transform: translate(0, 0) rotate(360deg);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.7);
-    }
-    70% {
-        transform: scale(1.02);
-        box-shadow: 0 0 0 15px rgba(255, 51, 102, 0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 51, 102, 0);
-    }
-}
-
-@keyframes titleFloat {
-    0% {
+    0%, 100% {
         transform: translateY(0);
     }
     50% {
         transform: translateY(-15px);
     }
-    100% {
+}
+
+@keyframes floatBg {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+    50% {
+        transform: translate(0, 50px) scale(1);
+    }
+    75% {
+        transform: translate(-30px, 0) scale(0.95);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(212, 175, 143, 0.2);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 8px 30px rgba(212, 175, 143, 0.35);
+    }
+}
+
+@keyframes titleFloat {
+    0%, 100% {
         transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
     }
 }
 
 @keyframes cardFloat {
-    0% {
+    0%, 100% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-12px);
     }
-    100% {
+}
+
+@keyframes iconFloat {
+    0%, 100% {
         transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
     }
 }
 
 @keyframes linePulse {
     0% {
         width: 80px;
-        opacity: 0.8;
+        opacity: 0.6;
     }
     100% {
         width: 120px;
@@ -839,81 +1035,39 @@ footer {
     }
 }
 
-@keyframes iconSpin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes priceGlow {
-    0% {
-        text-shadow: 0 0 5px rgba(255, 154, 60, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 15px rgba(255, 154, 60, 0.8);
-    }
-}
-
-@keyframes tipBullet {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(5px);
-    }
-}
-
-@keyframes ingredientBullet {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.2);
-    }
-}
-
-@keyframes stepBullet {
-    0% {
-        opacity: 0.6;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @keyframes footerFloat {
-    0% {
+    0%, 100% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes ripple {
-    to {
-        transform: scale(4);
-        opacity: 0;
+        transform: translateY(-8px);
     }
 }
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 3rem;
+        font-size: 3.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
     }
 
     .nav-links {
         gap: 15px;
+        font-size: 0.75rem;
     }
 
-    .category-grid {
+    .category-grid,
+    .recipe-grid,
+    .tonic-grid,
+    .botanicals-grid,
+    .reviews-grid {
         grid-template-columns: 1fr;
     }
 
@@ -927,7 +1081,7 @@ footer {
         left: 0;
         right: 0;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(20, 12, 8, 0.95);
         padding: 20px;
         gap: 15px;
         max-height: 0;
@@ -936,36 +1090,55 @@ footer {
     }
 
     .nav-links.open {
-        max-height: 500px;
+        max-height: 600px;
+    }
+
+    .submission-form {
+        padding: 25px;
     }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
-    nav {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    .logo span {
-        font-size: 1.8rem;
+    .section-title {
+        font-size: 1.6rem;
     }
 
     .page-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .recipe-grid,
-    .gin-list,
-    .tonic-grid,
-    .botanicals-grid {
-        grid-template-columns: 1fr;
+    nav {
+        padding: 15px 0;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo span {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+
+    .category-card,
+    .gin-item,
+    .recipe-card {
+        padding: 20px;
+    }
+
+    .submission-form {
+        padding: 20px;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
     }
 }
